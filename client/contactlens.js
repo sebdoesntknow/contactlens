@@ -18,5 +18,5 @@ const router = (
     </Route>
   </Router>
 );
-
+// https://learnredux.com/view/G1CSA5AyDvI
 ReactDOM.render(router, document.querySelector('#root'));
