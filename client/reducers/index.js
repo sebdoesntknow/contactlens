@@ -8,7 +8,7 @@ import users from './users';
 const rootReducer = combineReducers({
   lenses,
   users,
-  router: routerReducer
+  routing: routerReducer
 });
 
-export rootReducer;
+export default rootReducer;
