@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // CSS stuff
 import css from './styles/style.styl';
 // Import components
-import Main from './components/Main';
+import App from './components/App';
 import Lenses from './components/Lenses';
 import Lens from './components/Lens';
 
@@ -17,12 +17,12 @@ import store, { history } from './store';
 const router = (
   <Provider store={store}>
     <Router history={history}>
-      <Route path='/' component={Main}>
+      <Route path='/' component={App}>
         <IndexRoute component={Lenses}></IndexRoute>
         <Route path='/view/:lensId' component={Lens}></Route>
       </Route>
     </Router>
   </Provider>
 );
-// https://learnredux.com/view/G1CSA5AyDvI
+// https://learnredux.com/view/lD46f78B4FE
 ReactDOM.render(router, document.querySelector('#root'));
