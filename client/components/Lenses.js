@@ -1,11 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router';
+// component imports
+import Lens from './Lens';
 
 const Lenses = React.createClass({
   render() {
+    const { lenses } = this.props;
+
     return (
-      <div>
-        List of Lenses
+      <div className='lenses-grid'>
+        {lenses.map((lens, i) =>
+          <Lens key={i} i={i} lens={lens} {...this.props} />
+        )}
       </div>
     );
   }
