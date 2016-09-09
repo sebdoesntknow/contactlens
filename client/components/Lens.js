@@ -11,6 +11,7 @@ const Lens = React.createClass({
             Position: {lens.eye}
           </Link>
         </div>
+        <button onClick={() => console.log('Delete this lens')}>x</button>
       </div>
     );
   }

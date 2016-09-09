@@ -16,5 +16,5 @@ const router = (
     <Router routes={routes} history={history} />
   </Provider>
 );
-// https://learnredux.com/view/lD46f78B4FE
+// https://learnredux.com/view/BWN-9bF51BU
 ReactDOM.render(router, document.querySelector('#root'));
