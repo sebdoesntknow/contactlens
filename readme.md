@@ -1,2 +1,8 @@
 # Contact Lens app
-Using the learnredux.com boilerplate created by Wes Bos.
+Web app to track contact lens usage. Work in progress
+
+TODO:
+
+- Think about calculate time by subtracting 'now' from 'expire'
+- Sanitize moment() usage, maybe create a multi-purpose function
+- styling

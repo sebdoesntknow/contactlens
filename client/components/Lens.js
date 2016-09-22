@@ -7,9 +7,13 @@ const Lens = React.createClass({
     return (
       <div className='grid-unit'>
         <div className='grid-lens'>
-          <Link to={`/view/${lens.code}`}>
-            Position: {lens.eye}
-          </Link>
+          <ul className='lens-items-list'>
+            <li><Link to={`/view/${lens.code}`}>
+              Position: {lens.eye}</Link></li>
+              <li>Opened: {lens.open_date}</li>
+              <li>Expires on: {lens.expiry_date}</li>
+              <li>Days left: {lens.days}</li>
+          </ul>
         </div>
         <button onClick={() => console.log('Delete this lens')}>x</button>
       </div>
