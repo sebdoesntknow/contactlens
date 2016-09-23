@@ -1,7 +1,7 @@
 import uuid from 'uuid';
 import moment from 'moment';
 
-// add Lens
+// add Left Lens
 export const addLeftLens = () => {
   const m = moment();
   const now = m.format('dddd, MMMM Do YYYY');
@@ -17,6 +17,7 @@ export const addLeftLens = () => {
   };
 }
 
+// add Right Lens
 export const addRightLens = () => {
   const m = moment();
   const now = m.format('dddd, MMMM Do YYYY');
@@ -32,9 +33,10 @@ export const addRightLens = () => {
   };
 }
 
-export const deleteLens = (id) => {
+export const deleteLens = (id, i) => {
   return {
     type: 'DELETE_LENS',
+    i,
     id
   };
 };

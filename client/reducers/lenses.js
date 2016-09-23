@@ -19,6 +19,14 @@ const lenses = (state = [], action) => {
         expiry_date: action.expiry_date,
         days: action.days
       }];
+    case 'DELETE_LENS':
+      return [
+        // get the start until the index of the lens
+        // we are removing
+        ...state.slice(0, action.i),
+        // and return the rest of the state array
+        ...state.slice(action.i + 1)
+      ];
     default:
       return state;
   }
