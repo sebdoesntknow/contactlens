@@ -9,7 +9,9 @@ const lenses = (state = [], action) => {
         eye: action.eye,
         open_date: action.open_date,
         expiry_date: action.expiry_date,
-        days: action.days
+        days: action.days,
+        expired: action.expired,
+        code: action.code
       }];
     case 'ADD_RIGHT_LENS':
       return [...state, {
@@ -17,7 +19,9 @@ const lenses = (state = [], action) => {
         eye: action.eye,
         open_date: action.open_date,
         expiry_date: action.expiry_date,
-        days: action.days
+        days: action.days,
+        expired: action.expired,
+        code: action.code
       }];
     case 'DELETE_LENS':
       return [
