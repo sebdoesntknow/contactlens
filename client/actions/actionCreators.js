@@ -15,12 +15,13 @@ let randomStringGen = (len, charSet) => {
 
 // add Left Lens
 export const addLeftLens = () => {
-  const m = moment();
   const id = uuid.v4();
+  const m = moment();
   const now = m.format('dddd, MMMM Do YYYY');
   const expire = m.set('days', 30).format('dddd, MMMM Do YYYY');
   const days_left = 30; // need to calculate this by subtracting expire and now
   const code = randomStringGen(10);
+  const editing = false;
   return {
     type: 'ADD_LEFT_LENS',
     id,
@@ -29,18 +30,20 @@ export const addLeftLens = () => {
     expiry_date: expire,
     days: days_left,
     expired: false,
-    code
+    code,
+    editing
   };
 }
 
 // add Right Lens
 export const addRightLens = () => {
-  const m = moment();
   const id = uuid.v4();
+  const m = moment();
   const now = m.format('dddd, MMMM Do YYYY');
   const expire = m.set('days', 30).format('dddd, MMMM Do YYYY');
   const days_left = 30;
   const code = randomStringGen(10);
+  const editing = false;
   return {
     type: 'ADD_RIGHT_LENS',
     id,
@@ -49,7 +52,8 @@ export const addRightLens = () => {
     expiry_date: expire,
     days: days_left,
     expired: false,
-    code
+    code,
+    editing
   };
 }
 
@@ -61,18 +65,10 @@ export const deleteLens = (id, i) => {
   };
 };
 
-export const activateEditing = (id, field) => {
+export const updateLens = (updatedLens) => {
+  console.log(updatedLens);
   return {
-    type: 'LENS_ACTIVATE_EDIT',
-    id,
-    field
-  };
-};
-
-export const editLens = (id, value) => {
-  return {
-    type: 'EDIT_LENS',
-    id,
-    value
+    type: 'UPDATE_LENS',
+    updatedLens
   };
 };

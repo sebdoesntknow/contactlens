@@ -11,7 +11,8 @@ const lenses = (state = [], action) => {
         expiry_date: action.expiry_date,
         days: action.days,
         expired: action.expired,
-        code: action.code
+        code: action.code,
+        editing: action.editing
       }];
     case 'ADD_RIGHT_LENS':
       return [...state, {
@@ -21,7 +22,8 @@ const lenses = (state = [], action) => {
         expiry_date: action.expiry_date,
         days: action.days,
         expired: action.expired,
-        code: action.code
+        code: action.code,
+        editing: action.editing
       }];
     case 'DELETE_LENS':
       return [
@@ -30,6 +32,15 @@ const lenses = (state = [], action) => {
         ...state.slice(0, action.i),
         // and return the rest of the state array
         ...state.slice(action.i + 1)
+      ];
+    case 'UPDATE_LENS':
+      return [
+        ...state.map(lens => {
+          if (lens.id === action.updatedLens.id) {
+            Object.assign({}, lens, action.updatedLens);
+          }
+          return lens
+        })
       ];
     default:
       return state;

@@ -17,7 +17,7 @@ const Edit = React.createClass({
                   defaultValue={value}
                   onBlur={this.finishEdit}
                   onKeyPress={this.checkEnter}
-                  {...props} />
+                  {...props} />;
   },
   checkEnter(e) {
     if (e.key === 'Enter') {

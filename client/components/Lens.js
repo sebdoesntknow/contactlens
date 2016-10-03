@@ -10,7 +10,7 @@ const Lens = React.createClass({
         <div className='grid-lens'>
           <ul className='lens-items-list'>
             <li><Link to={`/view/${lens.code}`}>
-              Position: {eye}</Link></li>
+              {eye} eye</Link></li>
               <li>Opened: {open_date}</li>
               <li>Expires on: {expiry_date}</li>
               <li>Days left: {days}</li>
