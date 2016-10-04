@@ -34,14 +34,14 @@ const lenses = (state = [], action) => {
         ...state.slice(action.i + 1)
       ];
     case 'UPDATE_LENS':
-      return [
-        ...state.map(lens => {
-          if (lens.id === action.updatedLens.id) {
-            Object.assign({}, lens, action.updatedLens);
-          }
-          return lens
-        })
-      ];
+      //console.log(state, action);
+      return state.map((lens, index) => {
+        if (index === action.i) {
+          Object.assign({}, lens, action.updatedLens);
+        }
+        console.log(lens);
+        return lens;
+      });
     default:
       return state;
   }

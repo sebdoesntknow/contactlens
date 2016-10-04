@@ -65,10 +65,11 @@ export const deleteLens = (id, i) => {
   };
 };
 
-export const updateLens = (updatedLens) => {
+export const updateLens = (updatedLens, i) => {
   console.log(updatedLens);
   return {
     type: 'UPDATE_LENS',
-    updatedLens
+    updatedLens,
+    i
   };
 };

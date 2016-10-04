@@ -17,7 +17,7 @@ const SingleLens = React.createClass({
       <div className='single-lens-container'>
         <ul className='lens-items-list'>
           <li>Position: {eye}</li>
-          <li><OpenDate onClick={updateLens.bind(null, {id: id, editing: 'open_date'})}>
+          <li><OpenDate onClick={updateLens.bind(null, {id, editing: 'open_date'}, i)}>
           Opened date: <Editable editing={editing}
                                  value={open_date}
                                  onEdit={updateLens.bind(null, {id: id, editing: false})} />
