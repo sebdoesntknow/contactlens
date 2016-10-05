@@ -5,10 +5,14 @@ import Editable from './Editable';
 import OpenDate from './OpenDate';
 import Expires from './Expires';
 import DaysLeft from './DaysLeft';
-
+/*
+<Editable editing={editing}
+                       field='open_date'
+                       value={open_date}
+                       onEdit={updateLens.bind(null, {id: id, editing: false})} />
+*/
 const SingleLens = React.createClass({
   render() {
-    // Would be nice to pass single lens through state instead doing this (below)
     const { lenses, params, updateLens } = this.props;
     let index;
     const currentLens = this.getLens(lenses, params.code);
@@ -18,9 +22,9 @@ const SingleLens = React.createClass({
         <ul className='lens-items-list'>
           <li>Position: {eye}</li>
           <li><OpenDate onClick={updateLens.bind(null, {id, editing: 'open_date'}, i)}>
-          Opened date: <Editable editing={editing}
-                                 value={open_date}
-                                 onEdit={updateLens.bind(null, {id: id, editing: false})} />
+          Opened date: {open_date}
+          Editing: {editing}
+          i: {i}
           </OpenDate></li>
           <li><Expires>Expires on: {expiry_date}</Expires></li>
           <li><DaysLeft>Days left: {days}</DaysLeft></li>

@@ -1,7 +1,6 @@
 // Lenses state Reducer
 
 const lenses = (state = [], action) => {
-  //console.log('Lenses will update');
   switch (action.type) {
     case 'ADD_LEFT_LENS':
       return [...state, {
@@ -34,12 +33,12 @@ const lenses = (state = [], action) => {
         ...state.slice(action.i + 1)
       ];
     case 'UPDATE_LENS':
-      //console.log(state, action);
       return state.map((lens, index) => {
         if (index === action.i) {
-          Object.assign({}, lens, action.updatedLens);
+          // for some reason when trying to return the new Object
+          // app fails saying there is an undefined value with no props
+          return Object.assign({}, lens, action.updatedLens);
         }
-        console.log(lens);
         return lens;
       });
     default:

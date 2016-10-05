@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default ({ editing, value, onEdit }) => {
-  if (editing) {
+export default ({ editing, field, value, onEdit }) => {
+  if (editing === field) {
     return <Edit value={value} onEdit={onEdit} {...this.props} />;
   }
 
