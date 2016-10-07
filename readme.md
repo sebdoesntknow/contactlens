@@ -3,7 +3,6 @@ Web app to track contact lens usage. Work in progress
 
 TODO:
 
-- Lens state Edit
 - Think about calculate time by subtracting 'now' from 'expire'
 - Sanitize moment() usage, maybe create a multi-purpose function
 - styling
