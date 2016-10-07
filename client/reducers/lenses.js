@@ -33,10 +33,8 @@ const lenses = (state = [], action) => {
         ...state.slice(action.i + 1)
       ];
     case 'UPDATE_LENS':
-      return state.map((lens, index) => {
-        if (index === action.i) {
-          // for some reason when trying to return the new Object
-          // app fails saying there is an undefined value with no props
+      return state.map(lens => {
+        if (lens.id === action.updatedLens.id) {
           return Object.assign({}, lens, action.updatedLens);
         }
         return lens;
