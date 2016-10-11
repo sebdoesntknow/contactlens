@@ -1,6 +1,6 @@
 import React from 'react';
 // component imports
-import Lens from './Lens';
+import Lens from '../Lens';
 
 const Lenses = React.createClass({
   render() {
