@@ -31,10 +31,13 @@ module.exports = {
       include: path.join(__dirname, 'client')
     },
     // CSS
-    { 
-      test: /\.styl$/, 
+    {
+      test: /\.css$/,
       include: path.join(__dirname, 'client'),
-      loader: 'style-loader!css-loader!stylus-loader'
+      loaders: [
+        'style?sourceMap',
+        'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+      ]
     }
     ]
   }

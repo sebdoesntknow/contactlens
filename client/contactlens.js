@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// CSS stuff
-import css from './styles/style.styl';
 // Router deps
 import { Router, browserHistory } from 'react-router';
 // App routes in components/route.js
