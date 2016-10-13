@@ -1,0 +1,8 @@
+.lens-templates-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  background-color: #c6e2ff;
+  width: 100%;
+}

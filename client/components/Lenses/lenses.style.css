@@ -4,8 +4,11 @@
           box-sizing: border-box;
 }
 
+.lenses-main {
+  margin-bottom: 120px;
+}
 .lenses-grid {
-  background: white;
+  background-color: white;
 
   max-width: 600px;
   margin: 0 auto;

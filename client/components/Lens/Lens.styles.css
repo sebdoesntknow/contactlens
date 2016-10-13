@@ -1,0 +1,32 @@
+.lens {
+  position: relative;
+}
+
+.lens button {
+  position: absolute;
+  top: 5px;
+  right: 1px;
+
+  color: black;
+  background: none;
+  border: 0;
+
+  visibility: hidden;
+}
+
+.lens:hover button {
+  cursor: pointer;
+  visibility: visible;
+}
+
+.lens-details {
+  background-color: yellow;
+}
+
+.lens-link {
+  color: inherit;
+}
+
+.lens-link:visited {
+  color: currentColor;
+}
