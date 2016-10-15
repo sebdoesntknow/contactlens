@@ -6,14 +6,21 @@ import OpenDate from '../OpenDate';
 import Expires from '../Expires';
 import DaysLeft from '../DaysLeft';
 
-// widgets
-//import Calendar from 'react-input-calendar';
+// widget setup
+import Moment from 'moment';
+import momentLocalizer from 'react-widgets/lib/localizers/moment';
+import Calendar from 'react-widgets/lib/Calendar';
+
+// localizer setup
+momentLocalizer(Moment);
 
 const SingleLens = React.createClass({
   render() {
     const { lenses, params, updateLens } = this.props;
     const currentLens = this.getLens(lenses, params.code);
     const { id, eye, open_date, expiry_date, days, editing, i } = currentLens;
+    const calendar = <Calendar defaultValue={new Date()} />;
+    console.log(calendar);
     return (
       <div className='single-lens-container'>
         <ul className='lens-items-list'>
