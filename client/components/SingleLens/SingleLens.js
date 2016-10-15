@@ -6,6 +6,9 @@ import OpenDate from '../OpenDate';
 import Expires from '../Expires';
 import DaysLeft from '../DaysLeft';
 
+// widgets
+//import Calendar from 'react-input-calendar';
+
 const SingleLens = React.createClass({
   render() {
     const { lenses, params, updateLens } = this.props;

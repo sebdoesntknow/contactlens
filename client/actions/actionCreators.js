@@ -71,3 +71,9 @@ export const updateLens = (updatedLens) => {
     updatedLens
   };
 };
+
+// Get local storage data
+//export const getLensLocalData = JSON.parse(localStorage.getItem('contactlens'));
+
+// Save state to localStorage
+// export const saveStateToLocal = localStorage.
