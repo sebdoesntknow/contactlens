@@ -9,9 +9,12 @@ import DateTimePicker from 'react-widgets/lib/DateTimePicker';
 // localizer setup
 momentLocalizer(Moment);
 
+// Styles
+import 'react-widgets/lib/less/react-widgets.less';
+
 export default ({ editing, field, value, onEdit }) => {
   if (editing === field) {
-    return <DatePicker value={value} onEdit={onEdit} field={field} />;
+    return <DatePicker styleName='datepicker' value={value} onEdit={onEdit} field={field} />;
   }
 
   return <span>{value}</span>
@@ -22,10 +25,12 @@ const DatePicker = React.createClass({
     const { value } = this.props;
 
     return (
-      <DateTimePicker defaultValue={new Date(value)}
-                      autoFocus={true}
-                      onBlur={this.finishEdit}
-                      onKeyPress={this.checkEnter} />
+        <DateTimePicker defaultValue={new Date(value)}
+                        format={'DD MMM YYYY'}
+                        time={false}
+                        autoFocus={true}
+                        onBlur={this.finishEdit}
+                        onKeyPress={this.checkEnter} />
     );
   },
   checkEnter(e) {
