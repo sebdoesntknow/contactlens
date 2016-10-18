@@ -17,8 +17,8 @@ let randomStringGen = (len, charSet) => {
 export const addLeftLens = () => {
   const id = uuid.v4();
   const m = moment();
-  const now = m.format('dddd, MMMM Do YYYY');
-  const expire = m.set('days', 30).format('dddd, MMMM Do YYYY');
+  const now = m.format('YYYY-MM-DD');
+  const expire = m.set('days', 30).format('YYYY-MM-DD');
   const days_left = 30; // need to calculate this by subtracting expire and now
   const code = randomStringGen(10);
   const editing = false;
@@ -39,8 +39,8 @@ export const addLeftLens = () => {
 export const addRightLens = () => {
   const id = uuid.v4();
   const m = moment();
-  const now = m.format('dddd, MMMM Do YYYY');
-  const expire = m.set('days', 30).format('dddd, MMMM Do YYYY');
+  const now = m.format('YYYY-MM-DD');
+  const expire = m.set('days', 30).format('YYYY-MM-DD');
   const days_left = 30;
   const code = randomStringGen(10);
   const editing = false;

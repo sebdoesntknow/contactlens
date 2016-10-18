@@ -6,38 +6,31 @@ import OpenDate from '../OpenDate';
 import Expires from '../Expires';
 import DaysLeft from '../DaysLeft';
 
-// widget setup
-import Moment from 'moment';
-import momentLocalizer from 'react-widgets/lib/localizers/moment';
-import Calendar from 'react-widgets/lib/Calendar';
-
-// localizer setup
-momentLocalizer(Moment);
+// Widget import
+import DatePicker from '../DatePicker';
 
 const SingleLens = React.createClass({
   render() {
     const { lenses, params, updateLens } = this.props;
     const currentLens = this.getLens(lenses, params.code);
     const { id, eye, open_date, expiry_date, days, editing, i } = currentLens;
-    const calendar = <Calendar defaultValue={new Date()} />;
-    console.log(calendar);
     return (
       <div className='single-lens-container'>
         <ul className='lens-items-list'>
           <li>Position: {eye}</li>
           <li>
             <OpenDate onClick={updateLens.bind(null, {id, editing: 'open_date'})}>
-                Opened: <Editable editing={editing}
-                                  field='open_date'
-                                  value={open_date}
-                                  onEdit={this.updateField.bind(null, id)} />
+                Opened: <DatePicker editing={editing}
+                                    field='open_date'
+                                    value={open_date}
+                                    onEdit={this.updateField.bind(null, id)} />
             </OpenDate>
           </li>
           <li><Expires onClick={updateLens.bind(null, {id, editing: 'expiry_date'})}>
-                Expires on: <Editable editing={editing}
-                                      field='expiry_date'
-                                      value={expiry_date}
-                                      onEdit={this.updateField.bind(null, id)} />
+                Expires on: <DatePicker editing={editing}
+                                        field='expiry_date'
+                                        value={expiry_date}
+                                        onEdit={this.updateField.bind(null, id)} />
           </Expires></li>
           <li>
             <DaysLeft onClick={updateLens.bind(null, {id, editing: 'days'})}>
