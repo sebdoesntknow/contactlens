@@ -6,3 +6,8 @@
   background-color: #c6e2ff;
   width: 100%;
 }
+
+.template-select {
+  position: absolute;
+  margin: 0 auto;
+}

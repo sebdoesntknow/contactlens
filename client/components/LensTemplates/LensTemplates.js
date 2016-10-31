@@ -11,12 +11,19 @@ class LensTemplates extends React.Component {
 
   render() {
     const { lensTemplates } = this.props;
-    console.log(lensTemplates);
     return (
       <div styleName='lens-templates-footer'>
-        This is the select template area
+        <select styleName='template-select' onChange={this.onTemplateChange}>
+          {lensTemplates.map(({brand, days}, index) => {
+            return <option key={index}>Brand: {brand} - Days: {days}</option>;
+          })}
+        </select>
       </div>
     );
+  }
+
+  onTemplateChange() {
+    console.log('Template changed!');
   }
 }
 

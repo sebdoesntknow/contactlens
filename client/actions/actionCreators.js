@@ -13,6 +13,8 @@ let randomStringGen = (len, charSet) => {
   return result;
 };
 
+/* Start of Lenses related actions */
+
 // add Left Lens
 export const addLeftLens = () => {
   const id = uuid.v4();
@@ -71,6 +73,30 @@ export const updateLens = (updatedLens) => {
     updatedLens
   };
 };
+
+/* End of Lenses related actions */
+///////////////////////////////////
+
+////////////////////////////////////////
+/* Start of Templates related actions */
+
+export const setTemplate = (selectedTemplate) => {
+  return {
+    type: 'SET_TEMPLATE',
+    selectedTemplate
+  };
+};
+
+export const deleteTemplate = (id) => {
+  console.log('Deleting template');
+};
+
+export const addTemplate = (newTemplate) => {
+  console.log('adding new Template!');
+};
+
+/* End of Templates related actions */
+//////////////////////////////////////
 
 // Get local storage data
 //export const getLensLocalData = JSON.parse(localStorage.getItem('contactlens'));
