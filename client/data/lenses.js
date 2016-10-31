@@ -3,6 +3,7 @@
 {
   'id': 'a9700eaa-2f9a-4293-8c22-e9629d790cfb',
   'eye': 'Left',
+  'brand': 'cooper vision',
   'open_date': '07/01/2016',
   'expiry_date': '08/01/2016',
   'days': '10',

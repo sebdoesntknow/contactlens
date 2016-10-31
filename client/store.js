@@ -7,10 +7,12 @@ import rootReducer from './reducers/index';
 
 import lenses from './data/lenses';
 import users from './data/users';
+import lensTemplates from './data/lensTemplates';
 
 // create object for the default data
 const defaultState = {
   lenses,
+  lensTemplates,
   users
 };
 

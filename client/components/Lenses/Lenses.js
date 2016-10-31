@@ -21,7 +21,8 @@ const Lenses = React.createClass({
             <Lens key={i} i={i} lens={lens} {...this.props} styles={null} />
           )}
         </div>
-        <LensTemplates />
+        {/* It DOES matter in which order you provide props and styles={null}*/}
+        <LensTemplates {...this.props} styles={null} />
       </div>
     );
   }

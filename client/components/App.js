@@ -7,6 +7,7 @@ import Main from './Main';
 const mapStateToProps = (state) => {
   return {
     lenses: state.lenses,
+    lensTemplates: state.lensTemplates,
     users: state.users
   };
 };
