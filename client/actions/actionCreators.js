@@ -80,10 +80,10 @@ export const updateLens = (updatedLens) => {
 ////////////////////////////////////////
 /* Start of Templates related actions */
 
-export const setTemplate = (selectedTemplate) => {
+export const setTemplate = (i) => {
   return {
     type: 'SET_TEMPLATE',
-    selectedTemplate
+    i
   };
 };
 
