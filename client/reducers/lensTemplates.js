@@ -4,13 +4,14 @@ const lensTemplates = (state = [], action) => {
     case 'ADD_TEMPLATE':
       return state;
     case 'SET_TEMPLATE':
-      let new_state = state.map(template => {
-        return Object.assign({}, template, {default: false});
+      const newState = state.map(template => {
+        template.default = false;
+        return template;
       });
       return [
-        ...new_state.slice(0, action.i),
-        Object.assign({}, new_state[action.i], {default: true}),
-        ...new_state.slice(action.i + 1)
+        ...newState.slice(0, action.i),
+        Object.assign({}, newState[action.i], {default: true}),
+        ...newState.slice(action.i + 1)
       ];
     default:
       return state;

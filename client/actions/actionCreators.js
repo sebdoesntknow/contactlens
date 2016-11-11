@@ -81,6 +81,7 @@ export const updateLens = (updatedLens) => {
 /* Start of Templates related actions */
 
 export const setTemplate = (i) => {
+  console.log(`Action setTemplate i`, i);
   return {
     type: 'SET_TEMPLATE',
     i

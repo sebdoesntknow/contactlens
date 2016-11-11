@@ -16,14 +16,16 @@ class LensTemplates extends React.Component {
       if (t.default) {
         return t;
       }
-    });
+      });
     const defaultIndex = lensTemplates.indexOf(defaultTemplate[0]);
 
     return (
       <div styleName='lens-templates-footer'>
-          <select value={defaultIndex} onChange={this.onTemplateChange}>
+          <select onChange={(e) => { this.onTemplateChange(e) }}>
             {lensTemplates.map(({brand, days}, index) => {
-              return <option key={index} value={index}>Brand: {brand} - Days: {days}</option>;
+              return <option key={index} value={index}>
+                        Brand: {brand} - Days: {days}
+                     </option>;
             })}
           </select>
       </div>
@@ -31,7 +33,9 @@ class LensTemplates extends React.Component {
   }
 
   onTemplateChange(event) {
-    this.props.setTemplate(event.target.value);
+    const selectedValue = event.target.value;
+    this.props.setTemplate(selectedValue);
+    event.preventDefault();
   }
 }
 
