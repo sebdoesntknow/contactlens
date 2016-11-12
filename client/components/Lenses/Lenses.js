@@ -10,13 +10,19 @@ import LensTemplates from '../LensTemplates';
 
 const Lenses = React.createClass({
   render() {
-    const { addLeftLens, addRightLens, lenses } = this.props;
+    const { addLeftLens, addRightLens, lenses, lensTemplates } = this.props;
+    // Get current default template
+    const defaultTemplate = lensTemplates.filter(t => {
+      if (t.default) {
+        return t;
+      }
+    })[0];
 
     return (
       <div styleName='lenses-main'>
         <div styleName='lenses-grid'>
-          <button onClick={addLeftLens.bind(null)}>+L</button>
-          <button onClick={addRightLens.bind(null)}>+R</button>
+          <button onClick={addLeftLens.bind(null, defaultTemplate)}>+L</button>
+          <button onClick={addRightLens.bind(null, defaultTemplate)}>+R</button>
           {lenses.map((lens, i) =>
             <Lens key={i} i={i} lens={lens} {...this.props} styles={null} />
           )}

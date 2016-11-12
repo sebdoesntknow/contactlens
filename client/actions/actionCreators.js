@@ -16,12 +16,12 @@ let randomStringGen = (len, charSet) => {
 /* Start of Lenses related actions */
 
 // add Left Lens
-export const addLeftLens = () => {
+export const addLeftLens = (defaultTemplate) => {
   const id = uuid.v4();
   const m = moment();
   const now = m.format('YYYY-MM-DD');
-  const expire = m.set('days', 30).format('YYYY-MM-DD');
-  const days_left = 30; // need to calculate this by subtracting expire and now
+  const expire = m.set('days', defaultTemplate.days).format('YYYY-MM-DD');
+  const days_left = defaultTemplate.days;
   const code = randomStringGen(10);
   const editing = false;
   return {
@@ -38,12 +38,12 @@ export const addLeftLens = () => {
 }
 
 // add Right Lens
-export const addRightLens = () => {
+export const addRightLens = (defaultTemplate) => {
   const id = uuid.v4();
   const m = moment();
   const now = m.format('YYYY-MM-DD');
-  const expire = m.set('days', 30).format('YYYY-MM-DD');
-  const days_left = 30;
+  const expire = m.set('days', defaultTemplate.days).format('YYYY-MM-DD');
+  const days_left = defaultTemplate.days;
   const code = randomStringGen(10);
   const editing = false;
   return {
@@ -81,7 +81,6 @@ export const updateLens = (updatedLens) => {
 /* Start of Templates related actions */
 
 export const setTemplate = (i) => {
-  console.log(`Action setTemplate i`, i);
   return {
     type: 'SET_TEMPLATE',
     i
