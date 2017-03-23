@@ -1,0 +1,47 @@
+service: contactlens
+
+# TODO build authorizer lambda
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  region: ${env:CLENS_REGION} # Create local env var CLENS_REGION with value 'us-east-1'
+  stage: ${env:CLENS_STAGE} # Create the local env var CLENS_STAGE with value 'dev'
+  profile: ${env:CLENS_AWS_PROFILE} # Set the local env var with the profile name to use in AWS
+  memorySize: 256
+  timeout: 20
+
+package:
+  individually: true
+  include:
+    - 'node_modules/**'
+    - 'lib/**'
+
+functions:
+  getdata:
+    handler: handler.hello
+    name: ${self:service}-${self:provider.stage}-getdata
+    handler: clens.getdata
+    description: Get contact lens data from CLENS database
+    events:
+      - http:
+          path: ${self:service}/getdata
+          method: get
+          cors: true
+          # authorizer:
+            # arn:
+            # identitySource: method.request.header.Authorization
+
+  postdata:
+    handler: handler.hello
+    name: ${self:service}-${self:provider.stage}-postdata
+    handler: clens.postdata
+    description: Send contact lens data from CLENS and save into database
+    events:
+      - http:
+          path: ${self:service}/postdata
+          method: get
+          cors: true
+          # authorizer:
+            # arn:
+            # identitySource: method.request.header.Authorization
