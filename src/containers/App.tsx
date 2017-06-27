@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import Menu from '../components/MenuBar';
+import ContactLens from './MainView/ContactLens';
 
 class App extends React.Component<{}, {}> {
   render() {
     return (
-      <Menu />
+      <ContactLens />
     );
   }
 }

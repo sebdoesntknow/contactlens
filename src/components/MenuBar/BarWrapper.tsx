@@ -29,7 +29,6 @@ const BarWrapper = styled(BarWrapperContainer)`
     background-color: ${props => props.bgcolor ? props.bgcolor : 'palevioletred'};
     width: ${props => props.width ? props.width : '100%'};
     height: ${props => props.height ? props.height : '20%'};
-    margin: 0 auto auto 0;
 `;
 
 export default BarWrapper;
