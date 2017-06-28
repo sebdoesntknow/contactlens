@@ -20,6 +20,9 @@ const ContactLensWrapper = styled(ContactLensWrapperContainer)`
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+
+    flex-flow: row wrap;
+    justify-content: space-around;
 `;
 
 export default ContactLensWrapper;

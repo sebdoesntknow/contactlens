@@ -4,7 +4,7 @@ import styled from 'styled-components';
 interface BarWrapperProps {
     className?: string;
     children?: any;
-    primary?: boolean;
+    position?: string;
     bgcolor?: string;
     width?: string;
     height?: string;
@@ -27,7 +27,7 @@ const BarWrapper = styled(BarWrapperContainer)`
     display: -webkit-flex;
     display: flex;
 
-    position: ${props => props.primary ? 'fixed' : 'absolute'};
+    position: ${props => props.position ? props.position : 'absolute'};
     background-color: ${props => props.bgcolor ? props.bgcolor : 'palevioletred'};
     width: ${props => props.width ? props.width : '100%'};
     height: ${props => props.height ? props.height : '20%'};

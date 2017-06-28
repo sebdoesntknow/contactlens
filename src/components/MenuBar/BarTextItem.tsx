@@ -8,6 +8,7 @@ interface BarTextItemProps {
     fontFamily?: string;
     color?: string;
     margin?: string;
+    padding?: string;
 }
 
 function BarTextItemContainer(props: BarTextItemProps) {
@@ -23,6 +24,7 @@ const BarTextItem = styled(BarTextItemContainer)`
     font-family: ${props => props.fontFamily ? props.fontFamily : 'Poppins'};
     color: ${props => props.color ? props.color : 'black'};
     margin: ${props => props.margin ? props.margin : '1em 1em'};
+    padding: ${props => props.padding ? props.padding : 'none'};
     text-align: center;
 `;
 
