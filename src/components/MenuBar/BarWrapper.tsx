@@ -3,11 +3,13 @@ import styled from 'styled-components';
 
 interface BarWrapperProps {
     className?: string;
-    children?: JSX.Element[];
+    children?: any;
     primary?: boolean;
     bgcolor?: string;
     width?: string;
     height?: string;
+    margin?: string;
+    padding?: string;
 }
 
 function BarWrapperContainer(props: BarWrapperProps) {
@@ -29,6 +31,8 @@ const BarWrapper = styled(BarWrapperContainer)`
     background-color: ${props => props.bgcolor ? props.bgcolor : 'palevioletred'};
     width: ${props => props.width ? props.width : '100%'};
     height: ${props => props.height ? props.height : '20%'};
+    margin: ${props => props.margin ? props.margin : '0 auto auto 0'};
+    padding: ${props => props.padding ? props.padding : 'none'};
 `;
 
 export default BarWrapper;
