@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import BarWrapper from '../../components/MenuBar/BarWrapper';
 import ComboBoxWrapper from '../../components/ComboBox/ComboBoxWrapper';
+import Button from '../../components/Button';
 
 const FooterSelect = ComboBoxWrapper.extend`
     position: absolute;
@@ -30,6 +31,7 @@ class Footer extends React.Component<FooterProps, FooterState> {
                 margin={'25em auto auto auto'}
                 height={'4em'}
             >
+                <Button>Button!</Button>
                 <FooterSelect>
                     <option value="A">Template 1</option>
                     <option value="B">Template 2</option>
