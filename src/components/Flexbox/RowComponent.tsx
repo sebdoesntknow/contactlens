@@ -24,7 +24,7 @@ const ColumnComponent = styled(ColumnComponentContainer)`
 
     flex-flow: row wrap;
     
-    background-color: ${props => props.bgcolor ? props.bgcolor : '#fefcfc'};
+    background-color: ${props => props.bgcolor ? props.bgcolor : 'palevioletred'};
     width: 100%
     height: 100%;
     border: none;
