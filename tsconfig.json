@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+        "*": [ "./typings/*" ]
+    },
     "outDir": "build/dist",
     "module": "commonjs",
     "target": "es5",
