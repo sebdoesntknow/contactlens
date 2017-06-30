@@ -18,5 +18,4 @@ export const H1 = styled(HeadingContainer)`
     font-size: 2em;
     font-family: Poppins;
     color: black;
-    padding: 0.3em;
 `;

@@ -1,13 +1,13 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-interface ColumnComponentProps {
+interface RowComponentProps {
     className?: string;
     children?: any;
     bgcolor?: string;
 }
 
-function ColumnComponentContainer(props: ColumnComponentProps): JSX.Element {
+function RowComponentContainer(props: RowComponentProps): JSX.Element {
     return(
         <div className={props.className}>
             {props.children}
@@ -15,7 +15,7 @@ function ColumnComponentContainer(props: ColumnComponentProps): JSX.Element {
     );
 }
 
-const ColumnComponent = styled(ColumnComponentContainer)`    
+const RowComponent = styled(RowComponentContainer)`    
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -23,11 +23,6 @@ const ColumnComponent = styled(ColumnComponentContainer)`
     display: flex;
 
     flex-flow: row wrap;
-    
-    background-color: ${props => props.bgcolor ? props.bgcolor : 'palevioletred'};
-    width: 100%
-    height: 100%;
-    border: none;
 `;
 
-export default ColumnComponent;
+export default RowComponent;

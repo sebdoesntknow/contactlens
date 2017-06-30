@@ -23,11 +23,6 @@ const ColumnComponent = styled(ColumnComponentContainer)`
     display: flex;
 
     flex-flow: column wrap;
-    
-    background-color: ${props => props.bgcolor ? props.bgcolor : 'palevioletred'};
-    width: 100%
-    height: 100%;
-    border: none;
 `;
 
 export default ColumnComponent;
