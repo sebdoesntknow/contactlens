@@ -16,13 +16,11 @@ const Title = H1.extend`
     order: 1;
 `;
 
-const Settings = Paragraph.extend`
+const MenuOption = Paragraph.extend`
     color: #cfd192;
     font-size: 2em;
     order: 2;
 `;
-const Templates = Settings.extend``;
-const Login = Settings.extend``;
 
 interface HeaderPresenterProps {}
 
@@ -30,9 +28,9 @@ export default (props: HeaderPresenterProps) => {
     return (
         <Menu>
             <Title>ContactLens</Title>
-            <Settings>Settings</Settings>
-            <Templates>Templates</Templates>
-            <Login>Login</Login>
+            <MenuOption>Settings</MenuOption>
+            <MenuOption>Templates</MenuOption>
+            <MenuOption>Login</MenuOption>
         </Menu>
     );
 };

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import BarWrapper from '../../components/MenuBar/BarWrapper';
+import BarWrapper from '../../components/Flexbox/RowComponent';
 import ComboBoxWrapper from '../../components/ComboBox/ComboBoxWrapper';
 
 const FooterSelect = ComboBoxWrapper.extend`
@@ -14,9 +14,10 @@ const FooterSelect = ComboBoxWrapper.extend`
 `;
 
 const FooterBar = BarWrapper.extend`
-    position: absolute;
-    margin: none;
-    bottom: 0;
+    background-color: palevioletred;
+    order: 5;
+    width: 100%;
+    height: 5em;
 `;
 
 interface FooterProps {}
@@ -25,11 +26,7 @@ interface FooterState {}
 class Footer extends React.Component<FooterProps, FooterState> {
     render() {
         return (
-            <FooterBar
-                position={'absolute'}
-                margin={'25em auto auto auto'}
-                height={'4em'}
-            >
+            <FooterBar>
                 <FooterSelect>
                     <option value="A">Template 1</option>
                     <option value="B">Template 2</option>
